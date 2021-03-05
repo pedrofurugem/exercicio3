@@ -1,21 +1,62 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, View, TextInput, StyleSheet } from 'react-native';
 
 export default function App() {
+
+
+
+
+
+  const addContact = () => {
+    console.log.toString(nome);
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.contatosInputView}>
+        {/*User vai inserir nome e telefone aqui */}
+        <TextInput
+          placeholder="Digite nome"
+          style={styles.estiloTextInput}
+          onChangeText={getNome}
+        />
+
+
+        <View
+          style={styles.contatosInputButton}
+        >
+
+          <Button
+            title="Add Contato"
+            onPress={addContact}
+          />
+        </View>
+
+      </View>
+      <View >
+        {/* Aqui será exibida lista de contatos */}
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 50
   },
+  contatosInputView: {
+    alignItems: 'center'
+  },
+  estiloTextInput: {
+    width: '80%',
+    borderBottomColor: '#CCC',
+    borderBottomWidth: 2,
+    marginBottom: 4,
+    padding: 4,
+    textAlign: 'center'
+
+  },
+  contatosInputButton: {
+    width: '80%'
+  }
 });
